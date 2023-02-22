@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Metro</title>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div id="wrapper"> 
+  
+    <h1>Карта метро Минска - интерактивная схема с расчетом времени</h1>
+      
+  <div id="metromap" style="width: 100%; height: 888px; margin: 0 auto; overflow:hidden;">
+    <div id="draggable" style="width: 1200px; height: 888px; cursor: auto; left: 0px; position: relative;" class="ui-draggable ui-draggable-handle">
+    <div id="bgimg"></div>
+    <div id="bgimg_d" class="hidden"></div>
+    <div id="canvas" style="position:relative; border: 0;">
+  
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1200px" height="888px"><desc></desc><defs></defs>
+    
+      <path fill="none" stroke="#000000" d="M166.5,390C186.375,394.5,223.125,394.5,240,396" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="269"></path>
+      <path fill="none" stroke="#000000" d="M240,396C256.5,395.625,306,387.375,324,388.5" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="270"></path>
+      <path fill="none" stroke="#000000" d="M324,388.5C340.5,382.125,378,384.375,390,381" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="271"></path>
+      <path fill="none" stroke="#000000" d="M460.5,399C445.875,391.5,409.125,378,390,381" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="272"></path>
+      <path fill="none" stroke="#000000" d="M538.5,414C505.5,414.75,492,411.75,460.5,399" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="273"></path>
+      <path fill="none" stroke="#000000" d="M538.5,414C550.875,417,574.125,402,582,408" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="274"></path>
+      <path fill="none" stroke="#000000" d="M618,438C610.5,426,597,409.5,582,408" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="275"></path>
+      <path fill="none" stroke="#000000" d="M645,492C635.25,478.5,626.25,451.5,618,438" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="276"></path>
+      <path fill="none" stroke="#000000" d="M702,514.5C689.25,529.875,656.25,497.625,645,492" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="277"></path>
+      <path fill="none" stroke="#000000" d="M798,519C766.5,495.375,724.5,514.125,702,514.5" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="278"></path>
+      <path fill="none" stroke="#000000" d="M856.5,615C826.875,580.5,818.625,529.5,798,519" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="279"></path>
+      <path fill="none" stroke="#000000" d="M916.5,652.5C897,635.625,874.5,625.875,856.5,615" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="280"></path>
+      <path fill="none" stroke="#000000" d="M1009.5,702C986.25,683.625,942.75,670.875,916.5,652.5" style="stroke-width: 12;" stroke-width="12" class="mbR_24" mb_r_id="281"></path>
+      <path fill="none" stroke="#000000" d="M288,745.5C298.125,724.875,312.375,688.125,328.5,663" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="282"></path>
+      <path fill="none" stroke="#000000" d="M369,591C361.875,612,341.625,645,328.5,663" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="283"></path>
+      <path fill="none" stroke="#000000" d="M418.5,540C394.125,552.75,384.375,572.25,369,591" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="284"></path>
+      <path fill="none" stroke="#000000" d="M502.5,532.5C466.5,525.375,456,514.125,418.5,540" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="285"></path>
+      <path fill="none" stroke="#000000" d="M564,489C559.125,498.375,547.875,539.625,502.5,532.5" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="286"></path>
+      <path fill="none" stroke="#000000" d="M618,438C592.5,452.25,582,464.25,564,489" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="287"></path>
+      <path fill="none" stroke="#000000" d="M666,402C655.5,411,630,427.5,618,438" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="288"></path>
+      <path fill="none" stroke="#000000" d="M699,360C690.75,367.5,675.75,393,666,402" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="289"></path>
+      <path fill="none" stroke="#000000" d="M756,324C737.25,328.5,713.25,346.5,699,360" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="290"></path>
+      <path fill="none" stroke="#000000" d="M822,310.5C810,315.375,772.5,317.625,756,324" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="291"></path>
+      <path fill="none" stroke="#000000" d="M879,283.5C864.75,290.25,836.25,303.75,822,310.5" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="292"></path>
+      <path fill="none" stroke="#000000" d="M934.5,261C920.625,266.625,892.875,277.875,879,283.5" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="293"></path>
+      <path fill="none" stroke="#000000" d="M994.5,235.5C981,243.375,949.5,257.625,934.5,261" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="294"></path>
+      <path fill="none" stroke="#000000" d="M1063.5,205.5C1046.25,216,1011.75,231,994.5,235.5" style="stroke-width: 12;" stroke-width="12" class="mbR_23" mb_r_id="295"></path>
+    
+      <circle cx="329" cy="663" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="290" data-hasqtip="0"></circle>
+      <circle cx="369" cy="591" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="291" data-hasqtip="1"></circle>
+      <circle cx="419" cy="540" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="292" data-hasqtip="2"></circle>
+      <circle cx="503" cy="533" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="293" data-hasqtip="3"></circle>
+      <circle cx="564" cy="489" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="294" data-hasqtip="4"></circle>
+      <circle cx="618" cy="438" r="17.5" fill="#fff" stroke="#ffffff" stroke-width="1" mb_sd_id="295" data-hasqtip="5"></circle>
+      <path fill="none" stroke="#fff" d="M618,438L618,421.5A16.5,16.5,0,0,1,618,454.5" style="stroke-width: 0;" stroke-width="0" class="mbSt_23" mb_sd_id="295" data-hasqtip="6"></path><path fill="none" stroke="#fff" d="M618,438L618,454.5A16.5,16.5,0,0,1,618,421.5" style="stroke-width: 0;" stroke-width="0" class="mbSt_24" mb_sd_id="317" data-hasqtip="7"></path><path fill="none" stroke="#fff" d="M618,438L618,421.5" style="stroke-width: 1;" stroke-width="1" class="mbSt_23" mb_sd_id="295" data-hasqtip="8"></path><path fill="none" stroke="#fff" d="M618,438L618,454.5" style="stroke-width: 1;" stroke-width="1" class="mbSt_24" mb_sd_id="317" data-hasqtip="9"></path><circle cx="666" cy="402" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="296" data-hasqtip="10"></circle>
+      <circle cx="699" cy="360" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="297" data-hasqtip="11" aria-describedby="qtip-11"></circle>
+      <circle cx="756" cy="324" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="298" data-hasqtip="12"></circle>
+      <circle cx="822" cy="311" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="299" data-hasqtip="13"></circle>
+      <circle cx="879" cy="284" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="300" data-hasqtip="14"></circle>
+      <circle cx="935" cy="261" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="301" data-hasqtip="15"></circle>
+      <circle cx="995" cy="236" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="302" data-hasqtip="16"></circle>
+      <circle cx="1064" cy="206" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="303" data-hasqtip="17"></circle>
+      <circle cx="1010" cy="702" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="304" data-hasqtip="18"></circle>
+      <circle cx="917" cy="653" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="305" data-hasqtip="19"></circle>
+      <circle cx="857" cy="615" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="306" data-hasqtip="20"></circle>
+      <circle cx="798" cy="519" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="307" data-hasqtip="21"></circle>
+      <circle cx="702" cy="515" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="308" data-hasqtip="22"></circle>
+      <circle cx="645" cy="492" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="309" data-hasqtip="23"></circle>
+      <circle cx="582" cy="408" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="310" data-hasqtip="24"></circle>
+      <circle cx="539" cy="414" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="311" data-hasqtip="25"></circle>
+      <circle cx="461" cy="399" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="312" data-hasqtip="26"></circle>
+      <circle cx="390" cy="381" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="313" data-hasqtip="27"></circle>
+      <circle cx="324" cy="389" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="314" data-hasqtip="28"></circle>
+      <circle cx="240" cy="396" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="315" data-hasqtip="29"></circle>
+      <circle cx="167" cy="390" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_24" mb_sd_id="316" data-hasqtip="30"></circle>
+      <circle cx="288" cy="746" r="16" fill="none" stroke="#ffffff" stroke-width="1" class="mbSt_23" mb_sd_id="318" data-hasqtip="31"></circle>
+  
+    </svg>
+
+    <div style="left: 194px; top: 644px; " class="stName" mb_sd_id="290" data-hasqtip="32"> 
+      <span mb_sd_id="290" class="stName mbT_23">ПЕТРОВЩИНА</span>
+      <br>
+      <span mb_sd_id="290" class="stName altName mbT_23">ПЯТРОЎШЧЫНА</span>
+   </div>
+
+   <div style="left: 266px; top: 572px; " class="stName" mb_sd_id="291" data-hasqtip="33"> 
+    <span mb_sd_id="291" class="stName mbT_23">МИХАЛОВО</span>
+  <br>
+  <span mb_sd_id="291" class="stName altName mbT_23">МІХАЛОВА</span>
+   </div>
+   <div style="left: 315px; top: 513px; " class="stName" mb_sd_id="292" data-hasqtip="34"> <span mb_sd_id="292" class="stName mbT_23">ГРУШЕВКА</span>
+  <br><span mb_sd_id="292" class="stName altName mbT_23">ГРУШАЎКА</span>
+   </div>
+   <div style="left: 465px; top: 549px; " class="stName" mb_sd_id="293" data-hasqtip="35"> <span mb_sd_id="293" class="stName mbT_23">ИНСТИТУТ КУЛЬТУРЫ</span>
+  <br><span mb_sd_id="293" class="stName altName mbT_23">ІНСТЫТУТ КУЛЬТУРЫ</span>
+   </div>
+   <div style="left: 407px; top: 468px; " class="stName" mb_sd_id="294" data-hasqtip="36"> <span mb_sd_id="294" class="stName mbT_23">ПЛОЩАДЬ ЛЕНИНА</span>
+  <br><span mb_sd_id="294" class="stName altName mbT_23">ПЛОШЧА ЛЕНІНА</span>
+   </div>
+   <div style="left: 638px; top: 423px; " class="stName" mb_sd_id="295" data-hasqtip="37"> <span mb_sd_id="295" class="stName mbT_23">ОКТЯБРЬСКАЯ</span>
+  <span mb_sd_id="295" class="stName altName mbT_23">/ КАСТРЫЧНІЦКАЯ</span>
+   </div>
+   <div style="left: 638px; top: 440px; " class="stName" mb_sd_id="317" data-hasqtip="38"> <span mb_sd_id="317" class="stName mbT_24">КУПАЛОВСКАЯ</span>
+  <span mb_sd_id="317" class="stName altName mbT_24">/ КУПАЛАЎСКАЯ</span>
+   </div>
+   <div style="left: 686px; top: 395px; " class="stName" mb_sd_id="296" data-hasqtip="39"> <span mb_sd_id="296" class="stName mbT_23">ПЛОЩАДЬ ПОБЕДЫ</span>
+  <span mb_sd_id="296" class="stName altName mbT_23">/ ПЛОШЧА ПЕРАМОГІ</span>
+   </div>
+   <div style="left: 716px; top: 357px; " class="stName" mb_sd_id="297" data-hasqtip="40"> <span mb_sd_id="297" class="stName mbT_23" style="">ПЛОЩАДЬ ЯКУБА КОЛАСА</span>
+  <br><span mb_sd_id="297" class="stName altName mbT_23" style="">ПЛОШЧА ЯКУБА КОЛАСА</span>
+   </div>
+   <div style="left: 611px; top: 282px; " class="stName" mb_sd_id="298" data-hasqtip="41"> <span mb_sd_id="298" class="stName mbT_23" style="">АКАДЕМИЯ НАУК</span>
+  <br><span mb_sd_id="298" class="stName altName mbT_23" style="">АКАДЭМІЯ НАВУК</span>
+   </div>
+   <div style="left: 833px; top: 320px; " class="stName" mb_sd_id="299" data-hasqtip="42"> <span mb_sd_id="299" class="stName mbT_23">ПАРК ЧЕЛЮСКИНЦЕВ</span>
+  <br><span mb_sd_id="299" class="stName altName mbT_23">ПАРК ЧАЛЮСКІНЦАЎ</span>
+   </div>
+   <div style="left: 767px; top: 243px; " class="stName" mb_sd_id="300" data-hasqtip="43" aria-describedby="qtip-43"> <span mb_sd_id="300" class="stName mbT_23" style="">МОСКОВСКАЯ</span>
+  <br><span mb_sd_id="300" class="stName altName mbT_23" style="">МАСКОЎСКАЯ</span>
+   </div>
+   <div style="left: 947px; top: 272px; " class="stName" mb_sd_id="301" data-hasqtip="44"> <span mb_sd_id="301" class="stName mbT_23">ВОСТОК</span>
+  <br><span mb_sd_id="301" class="stName altName mbT_23">УСХОД</span>
+   </div>
+   <div style="left: 840px; top: 195px; " class="stName" mb_sd_id="302" data-hasqtip="45"> <span mb_sd_id="302" class="stName mbT_23" style="">БОРИСОВСКИЙ ТРАКТ</span>
+  <br><span mb_sd_id="302" class="stName altName mbT_23" style="">БАРЫСАЎСКІ ТРАКТ</span>
+   </div>
+   <div style="left: 1082px; top: 182px; " class="stName" mb_sd_id="303" data-hasqtip="46"> <span mb_sd_id="303" class="stName mbT_23">УРУЧЬЕ</span>
+  <br><span mb_sd_id="303" class="stName altName mbT_23">УРУЧЧА</span>
+   </div>
+   <div style="left: 1028px; top: 701px; " class="stName" mb_sd_id="304" data-hasqtip="47"> <span mb_sd_id="304" class="stName mbT_24">МОГИЛЕВСКАЯ</span>
+  <br><span mb_sd_id="304" class="stName altName mbT_24">МАГІЛЁЎСКАЯ</span>
+   </div>
+   <div style="left: 933px; top: 615px; " class="stName" mb_sd_id="305" data-hasqtip="48"> <span mb_sd_id="305" class="stName mbT_24">АВТОЗАВОДСКАЯ</span>
+  <br><span mb_sd_id="305" class="stName altName mbT_24">АЎТАЗАВОДСКАЯ</span>
+   </div>
+   <div style="left: 869px; top: 567px; " class="stName" mb_sd_id="306" data-hasqtip="49"> <span mb_sd_id="306" class="stName mbT_24">ПАРТИЗАНСКАЯ</span>
+  <br><span mb_sd_id="306" class="stName altName mbT_24">ПАРТЫЗАНСКАЯ</span>
+   </div>
+   <div style="left: 818px; top: 500px; " class="stName" mb_sd_id="307" data-hasqtip="50"> <span mb_sd_id="307" class="stName mbT_24">ТРАКТОРНЫЙ ЗАВОД</span>
+  <br><span mb_sd_id="307" class="stName altName mbT_24">ТРАКТАРНЫ ЗАВОД</span>
+   </div>
+   <div style="left: 639px; top: 531px; " class="stName" mb_sd_id="308" data-hasqtip="51"> <span mb_sd_id="308" class="stName mbT_24">ПРОЛЕТАРСКАЯ</span>
+  <br><span mb_sd_id="308" class="stName altName mbT_24">ПРАЛЯТАРСКАЯ</span>
+   </div>
+   <div style="left: 660px; top: 462px; " class="stName" mb_sd_id="309" data-hasqtip="52"> <span mb_sd_id="309" class="stName mbT_24">ПЕРВОМАЙСКАЯ</span>
+  <span mb_sd_id="309" class="stName altName mbT_24">/ ПЕРШАМАЙСКАЯ</span>
+   </div>
+   <div style="left: 561px; top: 356px; " class="stName" mb_sd_id="310" data-hasqtip="53"> <span mb_sd_id="310" class="stName mbT_24">НЕМИГА</span>
+  <br><span mb_sd_id="310" class="stName altName mbT_24">НЯМІГА</span>
+   </div>
+   <div style="left: 476px; top: 432px; " class="stName" mb_sd_id="311" data-hasqtip="54"> <span mb_sd_id="311" class="stName mbT_24">ФРУНЗЕНСКАЯ</span>
+   </div>
+   <div style="left: 348px; top: 417px; " class="stName" mb_sd_id="312" data-hasqtip="55"> <span mb_sd_id="312" class="stName mbT_24">МОЛОДЕЖНАЯ</span>
+  <br><span mb_sd_id="312" class="stName altName mbT_24">МАЛАДЗЁЖНАЯ</span>
+   </div>
+   <div style="left: 393px; top: 329px; " class="stName" mb_sd_id="313" data-hasqtip="56"> <span mb_sd_id="313" class="stName mbT_24">ПУШКИНСКАЯ</span>
+  <br><span mb_sd_id="313" class="stName altName mbT_24">ПУШКІНСКАЯ</span>
+   </div>
+   <div style="left: 264px; top: 336px; " class="stName" mb_sd_id="314" data-hasqtip="57"> <span mb_sd_id="314" class="stName mbT_24">СПОРТИВНАЯ</span>
+  <br><span mb_sd_id="314" class="stName altName mbT_24">СПАРТЫЎНАЯ</span>
+   </div>
+   <div style="left: 182px; top: 414px; " class="stName" mb_sd_id="315" data-hasqtip="58"> <span mb_sd_id="315" class="stName mbT_24">КУНЦЕВЩИНА</span>
+  <br><span mb_sd_id="315" class="stName altName mbT_24">КУНЦАЎШЧЫНА</span>
+   </div>
+   <div style="left: 23px; top: 368px; " class="stName" mb_sd_id="316" data-hasqtip="59"> <span mb_sd_id="316" class="stName mbT_24">КАМЕННАЯ ГОРКА</span>
+   </div>
+   <div style="left: 179px; top: 729px; " class="stName" mb_sd_id="318" data-hasqtip="60"> <span mb_sd_id="318" class="stName mbT_23">МАЛИНОВКА</span>
+  <br><span mb_sd_id="318" class="stName altName mbT_23">МАЛІНАЎКА</span>
+   </div>
+    </div>
+    </div>
+  </div>
+   
+  
+    
+      <div class="advertBottom">
+  <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- MB-B -->
+  <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-1161187465905968" data-ad-slot="3235069187"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+    
+  
+    <div id="article">
+      <p>Разработка плана строительства Минского метро началась в 1976 году. А само открытие состоялось в 1984 году.</p>
+  <p>Все станции мелкого заложения, подземные. Из-за того, что глубина станций небольшая, лишь на немногих станциях имеются эскалаторы. В основном пассажиры пользуются лестницами. На новых станциях установлены лифты для людей с ограниченными возможностями. </p>
+  <p>На сегодняшний день метро Минска имеет 29 станций, 2 линии (Московская и Автозаводская). После открытия автозаводской линии пассажиропоток значительно увеличился, и это направление пользуется особой популярностью.</p>
+  <p>В ближайших перспективах продление 1 и 2 линии, а также строительство 3 и 4 линии. </p>
+  <p><strong>Особенностью Минского метрополитена является то, что о следующей остановке пассажирам объявляют на белорусском языке, а все остальные объявления делаются на русском языке.</strong> </p>
+  <p>На всех станциях метрополитена Минска представлена карта. Поэтому, на первый взгляд, заблудиться достаточно сложно. Единственная сложность в том, что карта представлена на белорусском языке. Хотя названия созвучны с русскими и зачастую не сложно догадаться о значении слов, однако в некоторых названиях есть весомая разница. </p>
+  <p><strong>Наш сайт удобен тем, что на нем карта (схема) метро Минска представлена на двух языках: на русском и белорусском.</strong> Теперь любой, кто захочет, сможет ей воспользоваться и без труда проложить маршрут. Для этого вам необходимо выбрать 2 точки:  точку отправления и точку прибытия. Вы можете выбрать их на карте или ввести названия в специальные поля вверху страницы. На нашей интерактивной карте маршрут будет подсвечен специальным цветом, также будет отмечена возможность пересадки и время в пути. </p>
+  
+    </div>
+  
+    <div id="footer" style="position: relative;">
+      Интерактивные карты метро: <a href="//kiev.metrobook.ru">Киев</a> <a href="//minsk.metrobook.ru">Минск</a> <a href="//metrobook.ru">Москва</a> <a href="//nino.metrobook.ru">Нижний Новгород</a> <a href="//nsk.metrobook.ru">Новосибирск</a> <a href="//spb.metrobook.ru">Санкт-Петербург</a> <a href="//kharkov.metrobook.ru">Харьков</a> <br>
+      График <a href="https://mostobook.ru">развода мостов в СПб</a><br>
+      <a href="mailto:nickkourpan@gmail.com" class="dark">MetroBook team</a> © 2014-2022
+  
+        <div id="liruCnt">
+          <!--LiveInternet counter--><script type="text/javascript">document.write("<a href='https://www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t44.5;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) +";h"+escape(document.title.substring(0,80)) +  ";" + Math.random() + "' border=0 width=31 height=31 alt='' title='LiveInternet'><\/a>")</script><a href="https://www.liveinternet.ru/click" target="_blank"><img src="//counter.yadro.ru/hit?t44.5;rhttps%3A//metrobook.ru/;s1920*1200*24;uhttps%3A//minsk.metrobook.ru/;h%u041A%u0430%u0440%u0442%u0430%20%u043C%u0435%u0442%u0440%u043E%20%u041C%u0438%u043D%u0441%u043A%u0430%20-%20%u0438%u043D%u0442%u0435%u0440%u0430%u043A%u0442%u0438%u0432%u043D%u0430%u044F%20%u0441%u0445%u0435%u043C%u0430%20%u041C%u0438%u043D%u0441%u043A%u043E%u0433%u043E%20%u043C%u0435%u0442%u0440%u043E%u043F%u043E%u043B%u0438%u0442%u0435%u043D%u0430%20%u0441%20%u0440%u0430%u0441%u0447%u0435%u0442%u043E%u043C%20%u0432%u0440%u0435%u043C%u0435;0.05181801989740187" border="0" width="31" height="31" alt="" title="LiveInternet"></a><!--/LiveInternet-->
+        </div>
+  
+    </div>
+  
+    <div id="stat">
+      <div id="statCity">
+        <label for="mbCitySelect">Город:</label>
+        <select id="mbCitySelect" onchange="OnMBCityChange();">				
+        <option value="//kiev.metrobook.ru">Киев</option><option selected="" value="//minsk.metrobook.ru">Минск</option><option value="//metrobook.ru">Москва</option><option value="//nino.metrobook.ru">Нижний Новгород</option><option value="//nsk.metrobook.ru">Новосибирск</option><option value="//spb.metrobook.ru">Санкт-Петербург</option><option value="//kharkov.metrobook.ru">Харьков</option>
+        </select>
+      </div>
+  
+      <div id="statRoute">
+        <div><label for="fromStation">Откуда: </label><input id="fromStation" placeholder="Откуда" class="ui-autocomplete-input" autocomplete="off"></div>
+        <div><label for="toStation">Куда: </label><input id="toStation" placeholder="Куда" class="ui-autocomplete-input" autocomplete="off"></div>
+      </div>
+  
+      <div id="statResult">
+        <div>Время: <span id="totalTime"></span></div>
+        <div id="statChangesTime">Из него в пересадках: <span id="changesTime"></span></div>
+        <div>Пересадок: <span id="totalChanges"></span></div>
+        <div id="statResultFree"></div>
+      </div>
+  
+      <div id="statConfig">
+        <div>
+          <label for="minimizeTo">Минимальное </label>
+          <select id="minimizeTo">
+            <option value="0">время</option>
+            <option value="1">кол-во пересадок</option>
+          </select>
+        </div>
+        <div>
+          <input type="button" value="Новый маршрут" onclick="onNewWay();">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   
+  </body>
+</html>
